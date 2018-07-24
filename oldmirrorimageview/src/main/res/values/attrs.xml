@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundCanvas">
+    <attr name="its_stroke_width" format="dimension"/>
+    <attr name="its_stroke_overlay" format="boolean"/>
+    <attr name="its_stroke_color" format="color"/>
+    <attr name="its_solid_color" format="color"/>
+    <attr name="its_tint_color_state_drawable" format="reference|color"/>
+    </declare-styleable>
+</resources>
