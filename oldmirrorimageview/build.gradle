@@ -1,10 +1,8 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 android {
     compileSdkVersion 28
-
-
-
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
@@ -32,3 +30,84 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+    task sourcesJar(type: Jar) {
+        from android.sourceSets.main.java.srcDirs
+        classifier = 'sources'
+    }
+
+    task javadoc(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    artifacts {
+        archives javadocJar
+        archives sourcesJar
+    }
+
+    group = 'gulshansutey.oldmirror.roundcanvas'
+    version = '1.0.0'
+
+    install {
+        repositories.mavenInstaller {
+            pom.project {
+                name 'OldMirrorImageView'
+                description 'A round image view with custom stroke and solid color also allows selector drawables for different states.'
+                url 'https://github.com/gulshansutey/roundcanvas'
+                inceptionYear '2018'
+
+                packaging 'aar'
+                groupId 'gulshansutey.roundcanvas.oldmirror'
+                artifactId 'oldmirror'
+                version '1.0.0'
+
+                licenses {
+                    license {
+                            name 'The MIT License (MIT)'
+                        url 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/gulshansutey/roundcanvas.git'
+                    url 'https://github.com/gulshansutey/roundcanvas'
+
+                }
+                developers {
+                    developer {
+                        id = 'gulshansutey'
+                        name 'gulshan'
+                    }
+                }
+            }
+        }
+    }
+
+    Properties bintrayProperties = new Properties()
+    bintrayProperties.load(project.rootProject.file('bintray.properties').newDataInputStream())
+
+    bintray {
+        user = bintrayProperties.getProperty('user')
+        key = bintrayProperties.get('key')
+        configurations = ['archives']
+        pkg {
+            repo = 'roundcanvas'
+            name = 'gulshansutey'
+            userOrg = 'gulshansutey'
+            licenses = ['MIT']
+            vcsUrl = 'https://github.com/gulshansutey/roundcanvas.git'
+            publish = true
+            version {
+                name = '1.0.0'
+                desc = 'gulshansutey.oldmirror.roundcanvas 1.0.0'
+                released = new Date()
+                vcsTag = 'v1.0.0'
+            }
+        }
+    }
+

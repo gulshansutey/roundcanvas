@@ -1,0 +1,7 @@
+siteUrl = https://github.com/gulshansutey/roundcanvas
+gitUrl = https://github.com/gulshansutey/roundcanvas.git
+version = 1.0.0
+groupId = gulshansutey.roundcanvas.oldmirror
+licenses = ['The MIT License (MIT)']  
+id = gulshansutey.roundcanvas.oldmirror
+name = oldmirror
