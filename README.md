@@ -21,17 +21,15 @@ You can set selector drawable to change the tint of the image inside it for diff
 		app:its_tint_color_state_drawable="@color/bg_color_selector"
 ```
 
-```file 
+ 
 bg_color_selector.xml
-```
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
      <item android:color="@color/colorPrimaryDark" android:state_focused="true" android:state_enabled="false"/>
-    <item android:color="@color/textColorPrimary" android:state_focused="true" android:state_enabled="true"/>
+    <item android:color="@color/colorPrimary" android:state_focused="true" android:state_enabled="true"/>
  <item android:color="@color/colorPrimaryDark" android:state_enabled="false"/>
-    <item android:color="@color/textColorPrimary" android:state_pressed="true"/>
+    <item android:color="@color/colorPrimary" android:state_pressed="true"/>
     <item android:color="@color/colorPrimaryDark" />
 </selector>
 ```
