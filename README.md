@@ -2,7 +2,7 @@
 A round image view with custom stroke and solid color also allows selector drawables for different states.
  
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/gulshansutey/roundcanvas/blob/master/project_lo.gif "Logo Title Text 1")
 
  
 ## Usage
