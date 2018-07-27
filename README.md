@@ -1,10 +1,10 @@
-## roundcanvas
+## RoudnCanvas ImageView
 A round image view with custom stroke and solid color also allows selector drawables for different states.
  
 ## Usage
 Use in your xml like this:
 
-
+```xml
 <gulshansutey.oldmirrorimageview.RoundCanvas
                 android:layout_width="100dp"
                 android:layout_gravity="center"
@@ -13,8 +13,7 @@ Use in your xml like this:
                 android:src="@drawable/my_picture"
                 app:its_solid_color="@color/textColorPrimary"
                 android:layout_height="100dp" />
-		
-		
+```
 
 ## Deployment
 
