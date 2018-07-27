@@ -1,6 +1,10 @@
 ## RoudnCanvas ImageView
 A round image view with custom stroke and solid color also allows selector drawables for different states.
  
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+ 
 ## Usage
 Use in your xml like this:
 
